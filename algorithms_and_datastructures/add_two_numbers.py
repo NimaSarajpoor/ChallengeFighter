@@ -52,10 +52,8 @@ def naive_add_two_numbers(root_A, root_B):
 
 def add_two_numbers(root_A, root_B):
     
-    
     node_A = root_A
     node_B = root_B
-
 
     dummynode = ListNode(val=None)
     node = dummynode
