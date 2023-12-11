@@ -1,4 +1,4 @@
-# link: https://leetcode.com/problems/two-sum/
+# link: https://leetcode.com/problems/two-sum/description/
 
 def naive_two_sum(list_of_numbers, target):
     """
@@ -17,6 +17,9 @@ def two_sum(list_of_numbers, target):
     """
     performant
     O(nlogn)
+
+    Alternatively, create a hashmap to store (v, index) pair, where the key of dictionary 
+    is v, and the value of the key is the index, which satisfies list_of_numbers[index] = v
     """
     import numpy as np
     IDX = np.argsort(list_of_numbers)
@@ -35,3 +38,5 @@ def two_sum(list_of_numbers, target):
             i = i + 1
     
     return [IDX[i], IDX[j]]
+
+

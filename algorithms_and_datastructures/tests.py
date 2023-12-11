@@ -1,10 +1,11 @@
 import numpy as np
 import random
+import string
 
 from transpose_matrix import naive_transpose_matrix, transpose_matrix
 from two_sum import naive_two_sum, two_sum
 from add_two_numbers import ListNode, convert_linkedlist_to_list, convert_list_to_linkedlist, add_two_numbers
-
+from longest_substring import naive_GetLongestSubstring, GetLongestSubstring
 
 def test_transpose_matrix():
     for n in range(1, 6):
@@ -37,10 +38,16 @@ def test_add_two_numbers():
     total = num1 + num2
     root = convert_list_to_linkedlist([int(x) for x in list(str(total))[::-1]])
 
-    try:
-        assert convert_linkedlist_to_list(root) == convert_linkedlist_to_list(add_two_numbers(root_1, root_2))
-    except:
-        print('num1: ', num1)
-        print('num2: ', num2)
-        print('total: ', total)
-        assert convert_linkedlist_to_list(root) == convert_linkedlist_to_list(add_two_numbers(root_1, root_2))
+    assert convert_linkedlist_to_list(root) == convert_linkedlist_to_list(add_two_numbers(root_1, root_2))
+
+def test_GetLongestSubstring():
+    lst_of_characters = list(string.ascii_lowercase)
+    for _ in range(10):
+        for i in range(2, 100):
+            lst = np.random.choice(lst_of_characters, size=i, replace=True).tolist()
+            s = ''.join(lst)
+            
+            assert naive_GetLongestSubstring(s) == GetLongestSubstring(s)
+
+
+    

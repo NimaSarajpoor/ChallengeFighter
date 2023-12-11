@@ -1,4 +1,4 @@
-# link https://leetcode.com/problems/transpose-matrix/description/?envType=daily-question&envId=2023-12-10
+# link https://leetcode.com/problems/transpose-matrix/description/
 
 def naive_transpose_matrix(matrix):
     """
