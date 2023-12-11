@@ -13,7 +13,7 @@ def naive_median_two_sorted_arrays(numbers_A, numbers_B):
     return float(statistics.median(sorted(out)))
 
 
-def median_two_sorted_arrays(numbers_A, numbers_B):
+def median_two_sorted_arrays(nums1, nums2):
     """
     performant
     """

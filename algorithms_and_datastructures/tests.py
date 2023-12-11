@@ -7,6 +7,8 @@ from two_sum import naive_two_sum, two_sum
 from add_two_numbers import ListNode, convert_linkedlist_to_list, convert_list_to_linkedlist, add_two_numbers
 from longest_substring import naive_GetLongestSubstring, GetLongestSubstring
 from median_two_sorted_arrays import naive_median_two_sorted_arrays, median_two_sorted_arrays
+from longestPalindrome import naive_longestPalindrome
+
 
 def test_transpose_matrix():
     for n in range(1, 6):
@@ -62,3 +64,9 @@ def test_median_two_sorted_arrays():
             B = sorted(B)
 
             assert naive_median_two_sorted_arrays(A, B) == median_two_sorted_arrays(A, B)
+
+
+def test_longestPalindrome():
+    assert naive_longestPalindrome('') == ''
+    assert naive_longestPalindrome('x') == 'x'
+    assert naive_longestPalindrome('aabcdcbezff') == 'bcdcb'
