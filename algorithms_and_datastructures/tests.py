@@ -6,6 +6,7 @@ from transpose_matrix import naive_transpose_matrix, transpose_matrix
 from two_sum import naive_two_sum, two_sum
 from add_two_numbers import ListNode, convert_linkedlist_to_list, convert_list_to_linkedlist, add_two_numbers
 from longest_substring import naive_GetLongestSubstring, GetLongestSubstring
+from median_two_sorted_arrays import naive_median_two_sorted_arrays, median_two_sorted_arrays
 
 def test_transpose_matrix():
     for n in range(1, 6):
@@ -50,4 +51,14 @@ def test_GetLongestSubstring():
             assert naive_GetLongestSubstring(s) == GetLongestSubstring(s)
 
 
-    
+def test_median_two_sorted_arrays():
+    list_100 = list(range(101))
+    for i in range(1, 10):
+        for j in range(1, 10):
+            A = np.random.choice(list_100, i, replace=True).tolist()
+            B = np.random.choice(list_100, j, replace=True).tolist()
+
+            A = sorted(A)
+            B = sorted(B)
+
+            assert naive_median_two_sorted_arrays(A, B) == median_two_sorted_arrays(A, B)
